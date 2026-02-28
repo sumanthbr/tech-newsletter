@@ -1,0 +1,36 @@
+name: Build Daily Digest
+
+on:
+  schedule:
+    - cron: "35 2 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  digest:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Build digest JSON
+        run: python scripts/build_digest.py --opml Feeder-2026-02-28.opml --output src/data/sample-feeds.json --max-stories 45 --days 2
+
+      - name: Commit updated digest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/sample-feeds.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh daily digest"
+          git push

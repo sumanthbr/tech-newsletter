@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Daily Cloud + GenAI Brief</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="orb orb-left"></div>
+    <div class="orb orb-right"></div>
+
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">YOUR DAILY SNAPSHOT</p>
+        <h1>GenAI + Cloud Industry Brief</h1>
+        <p id="today" class="muted"></p>
+        <p id="stats" class="muted"></p>
+      </div>
+      <a class="btn" href="#feed-config">Edit RSS Sources</a>
+    </header>
+
+    <main>
+      <section class="controls" aria-label="Filters">
+        <input id="search-input" class="search" type="search" placeholder="Search title or summary..." aria-label="Search stories" />
+        <div id="category-filters" class="chip-row"></div>
+      </section>
+
+      <section id="card-grid" class="card-grid" aria-live="polite"></section>
+      <p id="empty-state" class="empty hidden">No stories for this filter.</p>
+
+      <section id="feed-config" class="panel">
+        <h2>RSS Source Config</h2>
+        <p>
+          This site reads from <code>src/data/sample-feeds.json</code>.
+          To refresh daily from your OPML file, run:
+        </p>
+        <pre><code>python scripts/build_digest.py --opml Feeder-2026-02-28.opml --output src/data/sample-feeds.json</code></pre>
+        <p>Then host for free on GitHub Pages, Netlify, or Cloudflare Pages.</p>
+      </section>
+    </main>
+
+    <template id="news-card-template">
+      <article class="card">
+        <div class="card-head">
+          <span class="tag"></span>
+          <span class="source"></span>
+        </div>
+        <h3 class="title"></h3>
+        <p class="summary"></p>
+        <details>
+          <summary>Quick details</summary>
+          <p class="details"></p>
+          <a class="read-link" target="_blank" rel="noreferrer">Read full article</a>
+        </details>
+      </article>
+    </template>
+
+    <script src="./app.js" type="module"></script>
+  </body>
+</html>

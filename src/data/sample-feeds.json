@@ -1,0 +1,71 @@
+{
+  "stories": [
+    {
+      "category": "GenAI",
+      "source": "OpenAI Blog",
+      "title": "New multimodal model update focuses on lower latency",
+      "summary": "Model update improves response speed for image + text workflows with better tool-use consistency.",
+      "details": "For quick impact: faster end-user interaction, less timeout risk in chained agent tasks, and better reliability for enterprise assistants.",
+      "url": "https://openai.com/news",
+      "publishedAt": "2026-02-28T08:30:00Z"
+    },
+    {
+      "category": "Azure",
+      "source": "Microsoft Azure",
+      "title": "Azure AI services add new governance controls",
+      "summary": "Microsoft announced additional policy and audit controls for AI workloads across subscriptions.",
+      "details": "If you run regulated workloads, track this for policy templates, enhanced logging coverage, and improved role-level guardrails.",
+      "url": "https://azure.microsoft.com/en-us/updates/",
+      "publishedAt": "2026-02-27T17:00:00Z"
+    },
+    {
+      "category": "GCP",
+      "source": "Google Cloud Blog",
+      "title": "GCP expands model deployment options in Vertex AI",
+      "summary": "New deployment controls help teams route traffic and benchmark versions with lower operational overhead.",
+      "details": "Watch for easier canary rollouts and richer endpoint telemetry to reduce production-release friction.",
+      "url": "https://cloud.google.com/blog",
+      "publishedAt": "2026-02-27T14:40:00Z"
+    },
+    {
+      "category": "AWS",
+      "source": "AWS News Blog",
+      "title": "AWS announces cost visibility improvements for AI workloads",
+      "summary": "Billing dashboards now offer deeper per-service breakdowns for GenAI pipelines and inference endpoints.",
+      "details": "Useful for monthly optimization: identify expensive model calls, tune autoscaling, and set budget alerts at team-level granularity.",
+      "url": "https://aws.amazon.com/blogs/aws/",
+      "publishedAt": "2026-02-27T11:20:00Z"
+    },
+    {
+      "category": "Industry",
+      "source": "TechCrunch",
+      "title": "Enterprise buyers prioritize AI governance over raw model benchmarks",
+      "summary": "Survey trend shows organizations are shifting spend from experimentation to control, compliance, and observability.",
+      "details": "For your strategy: expect procurement to ask for auditability, security posture, and human-override paths before feature depth.",
+      "url": "https://techcrunch.com/",
+      "publishedAt": "2026-02-26T20:10:00Z"
+    }
+  ],
+  "feeds": [
+    {
+      "name": "OpenAI News",
+      "category": "GenAI",
+      "rssUrl": "https://openai.com/news/rss.xml"
+    },
+    {
+      "name": "Azure Updates",
+      "category": "Azure",
+      "rssUrl": "https://azurecomcdn.azureedge.net/en-us/updates/feed/"
+    },
+    {
+      "name": "Google Cloud Blog",
+      "category": "GCP",
+      "rssUrl": "https://cloudblog.withgoogle.com/rss/"
+    },
+    {
+      "name": "AWS Blog",
+      "category": "AWS",
+      "rssUrl": "https://aws.amazon.com/blogs/aws/feed/"
+    }
+  ]
+}
